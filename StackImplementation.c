@@ -1,9 +1,36 @@
 #include<stdio.h>
 #define size 5
 int stack[size],top=-1;
-void push(int x)
+int isEmpty()
+{
+    if(top==-1)
+    {
+        
+        return 1;
+    }
+    else
+    {
+        
+        return 0;
+    }
+}
+
+int isFull()
 {
     if(top==size-1)
+    {
+        
+        return 1;
+    }
+    else
+    {
+        
+        return 0;
+    }
+}
+void push(int x)
+{
+    if(isFull())
     {
         printf("Stack Overflow");
     }
@@ -16,7 +43,7 @@ void push(int x)
 void pop()
 {
     int x;
-    if(top==-1)
+    if(isEmpty())
     printf("Stack Underflow");
     else
     {
@@ -24,6 +51,7 @@ void pop()
         top--;
     }
 }
+
 void main()
 {
     push(10);
